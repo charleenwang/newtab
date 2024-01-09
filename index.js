@@ -4,14 +4,8 @@ var handleClickEvent = function(e) {
     var element = e.target;
     element.focus();
 
-    element.addEventListener('blur', handleBlurEvent);
+    element.addEventListener('blur', saveNotes);
 } 
-
-var handleBlurEvent = function(e) {
-    var element = e.target;
-
-    saveNotes();
-}
 
 var saveNotes = function() {
     var noteData = [];
