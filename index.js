@@ -1,3 +1,6 @@
+var newNoteButton = document.getElementsByClassName('newnote-button')[0];
+var newNoteInput = document.getElementsByClassName('newnote-input')[0]; 
+
 var handleClickEvent = function(e) {
     var element = e.target;
     element.focus();
@@ -27,23 +30,46 @@ var createNoteDiv = function(text) {
 
     var noteInput = document.createElement("textarea");
     noteInput.className = "note-input";
-    noteInput.textContent = text
+    noteInput.textContent = text;
 
     note.appendChild(noteInput);
 
     return note;
 }
 
-chrome.storage.local.get(["notes"], function(data) {
-    var notesContainer = document.getElementsByClassName('notes-container')[0];
+var notesContainer = document.getElementsByClassName('notes-container')[0];
 
+chrome.storage.local.get(["notes"], function(data) {
     var notesData = data.notes;
     for (var i = 0; i < notesData.length; i++) {
-        var note = createNoteDiv(notesData);
+        var note = createNoteDiv(notesData[i]);
         notesContainer.appendChild(note)
 
         note.addEventListener('click', handleClickEvent);
+
+
     }
 });
+
+var createNewNote = function() {
+    console.log("button clicked");
+    console.log(newNoteInput);
+    // get the new text
+    var newText = newNoteInput.value;
+
+    // render new note
+    var newNote = createNoteDiv(newText);
+    notesContainer.appendChild(newNote);
+
+    // save note data
+    saveNotes();
+
+    // reset input
+    newNoteInput.value = "";
+}
+
+newNoteButton.addEventListener('click', createNewNote);
+
+
 
 
