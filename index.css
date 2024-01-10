@@ -10,7 +10,7 @@ body {
 }
 
 .note {
-	width: 200px;
+	width: 300px;
 	height: 200px;
 	padding: 10px;
 	background-color: var(--teal);
@@ -50,7 +50,7 @@ body {
 	background-color: inherit;
 }
 
-.newnote-button {
+button {
 	height: 30px;
 }
 
