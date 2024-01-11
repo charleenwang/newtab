@@ -52,10 +52,12 @@ chrome.storage.local.get(["notes"], function(data) {
 });
 
 var createNewNote = function() {
-    console.log("button clicked");
-    console.log(newNoteInput);
     // get the new text
     var newText = newNoteInput.value;
+    if (newText == "") {
+        // don't make empty notes
+        return
+    }
 
     // render new note
     var newNote = createNoteDiv(newText);
