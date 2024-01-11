@@ -42,6 +42,9 @@ var notesContainer = document.getElementsByClassName('notes-container')[0];
 chrome.storage.local.get(["notes"], function(data) {
     var notesData = data.notes;
     for (var i = 0; i < notesData.length; i++) {
+        if (notesData[i] == "") {
+            continue
+        }
         var note = createNoteDiv(notesData[i]);
         notesContainer.appendChild(note)
 
