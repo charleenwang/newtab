@@ -3,5 +3,5 @@
 making a new tab extension and adding features as i come up with them
 
 current status:
-https://github.com/charleenwang/newtab/assets/20935931/23c49ca1-02b1-4b8e-83da-362a244566e0
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lcH1GvzCHmI?si=bN2cfsWPJo1bmsX5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
